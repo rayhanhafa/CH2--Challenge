@@ -1,32 +1,24 @@
-//core package => built in node js
-const http = require("http")
-const fs = require("fs")
-const path = require("path")
-
-//third party package
+const http = require("http");
+const fs = require("fs");
+const path = require("path");
 const url = require("url");
+const PUBLIC_DIRECTORY = path.join(__dirname, "../public");
+const PORT = 7000;
 
-const PUBLIC_DIR = path.join(__dirname, "../public");
-const PORT = 3000;
 
 const server = (req, res) => {
-    //localhost :8000
-    if (req.url === '/') {
-        req.url = "index.html"
-        // res.end('INI DEFAULT SERVER')
-    }
-    //localhost :8000/search
-    else if (req.url === '/search') {
-        res.end('INI HALAMAN SEARCH')
-    }
-    else {
-        res.end("gak ada....")
-    }
 
+    if (req.url === "/") {
+        req.url = "/index.html"
+    } else if (req.url === '/cars') {
+        req.url = '/cars.html'
+    } else {
+        req.url = req.url;
+    }
     const parseURL = url.parse(req.url);
     const pathName = `${parseURL.pathname}`;
     const extension = path.parse(pathName).ext;
-    const absolutePath = path.join(PUBLIC_DIR, pathName);
+    const absolutePath = path.join(PUBLIC_DIRECTORY, pathName);
 
     const contentTypes = {
         ".css": "text/css",
@@ -45,7 +37,7 @@ const server = (req, res) => {
             res.end(data);
         }
     });
-};
+}
 
 http.createServer(server).listen(PORT);
-console.log('server is running ... PORT : localhost: ' + PORT)
+console.log(`Server is running ... PORT : localhost:${PORT}`);

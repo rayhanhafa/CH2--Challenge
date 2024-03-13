@@ -34,6 +34,12 @@ body {
     letter-spacing: 0em;
 }
 
+.btn-register:hover {
+    color: #5CB85F;
+    background-color: #FFFFFF;
+    border: 1px solid #5CB85F;
+}
+
 .nav-link {
     font-size: 14px;
     font-weight: 400;
@@ -85,7 +91,7 @@ body {
 }
 
 .btn-sewa {
-    width: 140px;
+    width: 150px;
     height: 36px;
     padding: 8px, 12px, 8px, 12px;
     border-radius: 2px;
@@ -98,6 +104,12 @@ body {
     line-height: 20px;
     letter-spacing: 0em;
     color: white;
+}
+
+.btn-sewa:hover {
+    color: #5CB85F;
+    background-color: #FFFFFF;
+    border: 1px solid #5CB85F;
 }
 
 .bg-hero {
@@ -143,6 +155,11 @@ body {
     letter-spacing: 0em;
     color: black;
 }
+
+/* why us section */
+/* #why-us {
+    margin-top: 5%;
+} */
 
 .h-why-us {
     font-size: 16px;
@@ -206,11 +223,11 @@ body {
 
 /* Testimonial Section */
 .carousel-control-prev-icon {
-    background-image: url("../img/Vector.svg");
+    background-image: url("../images/Vector.svg");
 }
 
 .carousel-control-next-icon {
-    background-image: url("../img/Vector-kanan.svg");
+    background-image: url("../images/Vector-kanan.svg");
 }
 
 .carousel {
